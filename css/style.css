@@ -1,0 +1,22 @@
+html{
+	font-family: "Trebuchet MS";
+}
+#MainBookInfo , #MainWrapperSearch{
+	display: inline-block;
+}
+.EspacioImgLibro{
+	margin-top: 30px;
+}
+.EspacioBotones{
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+.Pacifico{
+	font-family: 'Pacifico';
+}
+.Satisfy{
+	font-family: 'Satisfy';
+}
+.JustifyText{
+	text-align: justify;
+}

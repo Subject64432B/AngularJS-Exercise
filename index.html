@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store">
+<head>
+	<meta charset="UTF-8">
+	<title>Book Store In AngularJS</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/6601f233ab.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+	<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 	<div class="container" ng-controller="BookController as store" >
+ 		<div id="MainWrapperSearch" class="EspacioBotones">
+ 			<label for="">Buscar</label>
+ 			<input type="text" placeholder="Ingrese..." ng-model="name">
+ 			<label for="">Ordenar</label>
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			    	<span class="caret"></span></button>
+			    <ul class="dropdown-menu" role="menu">
+			      <li ng-click=" orderByMe('titulo')"><a href="">Titulo</a></li>
+			      <li ng-click=" orderByMe('autor')"><a href="">Autor</a></li>
+			      <li ng-click=" orderByMe('editorial')"><a href="">Editorial</a></li>
+			    </ul>
+			  </div>
+ 		</div>
+		<ul class="list-group">
+	   		<li class="list-group-item" ng-repeat=" b in store.products | orderBy:myOrderBy">
+	   			<div class="row">
+		   			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 EspacioImgLibro">
+		   				<img ng-src="{{b.imagen[0].full}}" alt="no aparece joben">
+		   			</div>
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-6 JustifyText">
+			  	 		<h1 class="Satisfy">{{b.titulo}}</h1>
+			  	 		<h4>{{b.autor}}</h4>
+			  	 		<p>{{b.descripcion}}</p>
+			  	 	</div>
+			  	 </div>
+	  		</li>
+		</ul>
+	 </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/app.js"></script>
+</html>
