@@ -21,9 +21,9 @@
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 			    	<span class="caret"></span></button>
 			    <ul class="dropdown-menu" role="menu">
-			      <li ng-click=" orderByMe('titulo')"><a href="">Titulo</a></li>
-			      <li ng-click=" orderByMe('autor')"><a href="">Autor</a></li>
-			      <li ng-click=" orderByMe('editorial')"><a href="">Editorial</a></li>
+			      <li><a href="">Titulo</a></li>
+			      <li><a href="">Autor</a></li>
+			      <li><a href="">Editorial</a></li>
 			    </ul>
 			  </div>
  		</div>
@@ -31,7 +31,7 @@
 	   		<li class="list-group-item" ng-repeat=" b in store.products | orderBy:myOrderBy">
 	   			<div class="row">
 		   			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 EspacioImgLibro">
-		   				<img ng-src="{{b.imagen[0].full}}" alt="no aparece joben">
+		   				<img ng-src="{{b.img[0].full}}" alt="no aparece joben">
 		   			</div>
 					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-6 JustifyText">
 			  	 		<h1 class="Satisfy">{{b.titulo}}</h1>
