@@ -15,9 +15,9 @@
  	<div class="container" ng-controller="BookController as store" >
  		<div id="MainWrapperSearch" class="EspacioBotones">
  			<label for="">Buscar</label>
- 			<input type="text" placeholder="Ingrese..." ng-model="name">
+ 			<input type="text" placeholder="Ingrese..." ng-model="busqueda" class="SpaceRightSearch SpaceLeftSearch">
  			<label for="">Ordenar</label>
-			<div class="btn-group">
+			<div class="btn-group SpaceLeftCaret">
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 			    	<span class="caret"></span></button>
 			    <ul class="dropdown-menu" role="menu">
@@ -28,7 +28,7 @@
 			  </div>
  		</div>
 		<ul class="list-group">
-	   		<li class="list-group-item" ng-repeat=" b in store.products | orderBy:myOrderBy">
+	   		<li class="list-group-item" ng-repeat=" b in store.products | filter: busqueda ">
 	   			<div class="row">
 		   			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 EspacioImgLibro">
 		   				<img ng-src="{{b.img[0].full}}" alt="no aparece joben">
@@ -36,9 +36,28 @@
 					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-6 JustifyText">
 			  	 		<h1 class="Satisfy">{{b.titulo}}</h1>
 			  	 		<h4>{{b.autor}}</h4>
-			  	 		<p>{{b.descripcion}}</p>
+			  	 		<p>{{b.descripcion | limitTo: 270}} ... </p>
+			  	 		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Leer Completo</button>
+						<div class="modal fade" id="myModal" role="dialog">
+							<div class="modal-dialog">
+					  			<!-- Modal content-->
+					  			<div class="modal-content">
+					    			<div class="modal-header">
+					      				<button type="button" class="close" data-dismiss="modal">&times;</button>
+					      				<h3 class="modal-title">{{b.titulo}}</h3>
+					      				<h5 class="modal-title">{{b.autor}}</h5>
+					    			</div>
+						        	<div class="modal-body">
+						        	 	<p>{{b.descripcion}}</p>
+						        	</div>
+					    			<div class="modal-footer">
+					      				<button type="button" class="btn btn-default" data-dismiss="modal">Bae</button>
+					    			</div>
+					  			</div>
+							</div>
+						</div>
 			  	 	</div>
-			  	 </div>
+			  	</div>
 	  		</li>
 		</ul>
 	 </div>

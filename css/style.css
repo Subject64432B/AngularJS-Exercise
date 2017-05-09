@@ -20,3 +20,12 @@ html{
 .JustifyText{
 	text-align: justify;
 }
+.SpaceRightSearch{
+	margin-right: 65px;
+}
+.SpaceLeftSearch{
+	margin-left: 10px;
+}
+.SpaceLeftCaret{
+	margin-left: 15px;
+}

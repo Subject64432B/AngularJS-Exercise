@@ -22,7 +22,7 @@
 	{
 			id:'3',			
 			titulo: 'I robot',
-			autor: 'Isaac Asimo',
+			autor: 'Isaac Asimov',
 			editorial: 'Edhasa',
 			descripcion: 'Los robots de Isaac Asimov son máquinas capaces de llevar a cabomuy diversas tareas, y que a menudo se plantean a sí mismos problemas de conducta humana. Pero estas cuestiones se resuelven en Yo, robot en el ámbito de las tres leyes fundamentales de la robótica, concebidas por Asimov, y que no dejan de proponerextraordinarias paradojas que a veces se explican por errores de funcionamiento y otras por la creciente complejidad de los programas. Las paradojas que se planteanen estos relatos futuristas no son sólo ingeniosos ejercicios intelectuales sino sobretodo una indagación sobre la situación del hombre actual en relación con los avancestecnológicos y con la experiencia del tiempo.',
  			img:[{full:'public/img/img3.gif'}]
@@ -30,6 +30,5 @@
 ];
 	app.controller('BookController', function () {
 		this.products = books;
-
 	});
 })();
